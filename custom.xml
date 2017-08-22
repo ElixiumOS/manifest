@@ -100,7 +100,7 @@
   <project path="vendor/qcom/opensource/dpm" name="platform/vendor/qcom-opensource/dpm" remote="codeaurora" />
   <project path="vendor/qcom/opensource/time-services" name="platform/vendor/qcom-opensource/time-services" remote="codeaurora" />
 
-  <!-- OnePlus 3/3t releated repos
+  <!-- OnePlus 3/3t releated repos -->
   <project path="device/oppo/common" name="Oreos-Box/android_device_oppo_common" remote="github" revision="8.0" />
   <project path="device/oneplus/oneplus3" name="Oreos-Box/android_device_oneplus_oneplus3" remote="github" revision="8.0" />
   <project path="vendor/oneplus" name="sultanxda/proprietary_vendor_oneplus" remote="github" revision="cm-14.1-sultan" />
@@ -108,6 +108,6 @@
   <project path="vendor/nxp-nfc/opensource/frameworks" name="platform/vendor/nxp/opensource/frameworks" remote="codeaurora" />
   <project path="vendor/nxp-nfc/opensource/libnfc-nci" name="LineageOS/android_vendor_nxp-nfc_opensource_libnfc-nci" remote="github" revision="cm-14.1" />
   <project path="vendor/nxp-nfc/opensource/Nfc" name="LineageOS/android_vendor_nxp-nfc_opensource_Nfc" remote="github" revision="cm-14.1" />
-  -->
+
 
 </manifest>
