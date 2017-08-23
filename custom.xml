@@ -26,6 +26,10 @@
   <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
   <remove-project name="platform/hardware/libhardware_legacy" />
   <remove-project name="platform/system/sepolicy" />
+  <remove-project name="platform/external/libnetfilter_conntrack" />
+  <remove-project name="platform/system/core" />
+  <remove-project name="platform/system/vold" />
+  <remove-project name="platform/external/libnfnetlink" />
 
   <!-- Removing Nexus and pixel and god know what -->
   <remove-project name="device/google/dragon" />
@@ -38,6 +42,10 @@
   <remove-project name="device/lge/bullhead-kernel" />
   <remove-project name="device/asus/fugu" />
   <remove-project name="device/asus/fugu-kernel"/>
+
+  <!-- Replacement -->
+  <project path="system/core" name="Oreos-Box/platform_system_core" remote="github" revision="8.0" />
+  <project path="system/vold" name="Oreos-Box/platform_system_vold" remote="github" revision="8.0" />
 
   <!-- Lineage additions -->
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="cm-14.1" />
