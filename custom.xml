@@ -2,11 +2,21 @@
 <manifest>
 
   <remote  name="github"
-           fetch="https://github.com/" />
+           fetch="https://github.com" />
 
   <remote  name="codeaurora"
            fetch="https://source.codeaurora.org/quic/la"
            revision="LA.UM.5.5.r1-05300-8x96.0" />
+
+  <remote  name="oreos"
+           fetch="https://github.com/Oreos-Box"
+           revision="8.0" />
+
+  <remote  name="oreo-onyx"
+           fetch="https://github.com/Oreo-onyx" />
+
+  <remote  name="oreo-victara"
+           fetch="https://github.com/oreo-victara" />
 
   <!-- General useless things removing -->
   <remove-project name="platform/packages/apps/Launcher2" />
@@ -17,6 +27,9 @@
   <remove-project name="platform/packages/apps/Camera2" />
   <remove-project name="platform/packages/apps/Calendar" />
   <remove-project name="platform/packages/apps/Browser2" />
+  <remove-project name="platform/packages/apps/QuickSearchBox" />
+  <remove-project name="platform/packages/apps/DeskClock" />
+  <remove-project name="platform/packages/apps/Music" />
   <remove-project name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
@@ -26,12 +39,10 @@
   <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
   <remove-project name="platform/hardware/libhardware_legacy" />
   <remove-project name="platform/system/sepolicy" />
-  <remove-project name="platform/external/libnetfilter_conntrack" />
   <remove-project name="platform/system/core" />
   <remove-project name="platform/system/vold" />
   <remove-project name="platform/external/libnfnetlink" />
-
-  <!-- Removing Nexus and pixel and god know what -->
+  <remove-project name="platform/external/libnetfilter_conntrack" />
   <remove-project name="device/google/dragon" />
   <remove-project name="device/google/dragon-kernel" />
   <remove-project name="device/google/marlin" />
@@ -42,13 +53,64 @@
   <remove-project name="device/lge/bullhead-kernel" />
   <remove-project name="device/asus/fugu" />
   <remove-project name="device/asus/fugu-kernel"/>
+  <remove-project name="platform/build" />
+  <remove-project name="platform/build/kati" />
+  <remove-project name="platform/build/soong" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/frameworks/native" />
+  <remove-project name="platform/frameworks/av" />
+  <remove-project name="platform/packages/providers/MediaProvider" />
+  <remove-project name="platform/system/bt" />
+  <remove-project name="platform/system/media" />
+  <remove-project name="platform/system/netd" />
+  <remove-project name="platform/hardware/ril" />
+  <remove-project name="platform/hardware/qcom/keymaster" />
+  <remove-project name="platform/hardware/interfaces" />
+  <remove-project name="platform/hardware/libhardware" />
+  <remove-project name="platform/bootable/recovery" />
+  <remove-project name="platform/external/tinycompress" />
+  <remove-project name="platform/external/selinux" />
 
   <!-- Replacement -->
-  <project path="system/core" name="Oreos-Box/platform_system_core" remote="github" revision="8.0" />
-  <project path="system/vold" name="Oreos-Box/platform_system_vold" remote="github" revision="8.0" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="bionic" name="platform_bionic" remote="oreos" />
+  <project path="build/make" name="platform_build" remote="oreos" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/kati" name="build_kati" groups="pdk,tradefed" remote="oreo-onyx" revision="aosp-8.0.0" />
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="oreo-onyx" revision="aosp-8.0.0" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="hardware/ril" name="android_hardware_ril" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="hardware/libhardware" name="android_hardware_libhardware" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="system/core" name="platform_system_core" remote="oreos" />
+  <project path="system/vold" name="platform_system_vold" remote="oreos" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
+  <project path="system/bt" name="android_system_bt" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="system/netd" name="android_system_netd" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="oreo-onyx" revision="aosp-8.0.0" />
+  <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" remote="oreo-onyx" revision="aosp-8.0.0" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="oreo-onyx" revision="aosp-8.0.0" />
+
+  <!-- additions -->
+  <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
 
   <!-- Lineage additions -->
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="cm-14.1" />
+  <project path="external/tinycompress" name="android_external_tinycompress" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="external/selinux" name="android_external_selinux" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="external/stlport" name="android_external_stlport" remote="oreo-victara" revision="lineage-15.0" />
 
   <!-- CAF repos from codeaurora and lineage -->
   <project path="device/qcom/common" name="device/qcom/common" remote="codeaurora" />
@@ -99,7 +161,6 @@
   <project path="hardware/qcom/media-caf/msm8998" name="LineageOS/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-14.1-caf-8998" />
   <project path="hardware/qcom/wlan-caf" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan" remote="github" revision="cm-14.1-caf" />
   <project path="hardware/ril-caf" name="LineageOS/android_hardware_ril" groups="pdk" remote="github" revision="cm-14.1-caf" />
-  <project path="system/sepolicy" name="LineageOS/android_system_sepolicy" remote="github" revision="lineage-15.0" />
   <project path="system/qcom" name="platform/system/qcom" remote="codeaurora" />
   <project path="vendor/codeaurora/telephony" name="platform/vendor/codeaurora/telephony" remote="codeaurora" />
   <project path="vendor/qcom/opensource/bluetooth" name="platform/vendor/qcom-opensource/bluetooth" remote="codeaurora" />
@@ -109,8 +170,8 @@
   <project path="vendor/qcom/opensource/time-services" name="platform/vendor/qcom-opensource/time-services" remote="codeaurora" />
 
   <!-- OnePlus 3/3t releated repos -->
-  <project path="device/oppo/common" name="Oreos-Box/android_device_oppo_common" remote="github" revision="8.0" />
-  <project path="device/oneplus/oneplus3" name="Oreos-Box/android_device_oneplus_oneplus3" remote="github" revision="8.0" />
+  <project path="device/oppo/common" name="android_device_oppo_common" remote="oreos" />
+  <project path="device/oneplus/oneplus3" name="android_device_oneplus_oneplus3" remote="oreos" />
   <project path="vendor/oneplus" name="sultanxda/proprietary_vendor_oneplus" remote="github" revision="cm-14.1-sultan" />
   <project path="kernel/oneplus/msm8996" name="Tunder-Kernel/android_kernel_oneplus_msm8996" remote="github" revision="Tunder-1.2-lnx.v3.18.36" />
   <project path="vendor/nxp-nfc/opensource/frameworks" name="platform/vendor/nxp/opensource/frameworks" remote="codeaurora" />
