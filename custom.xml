@@ -62,7 +62,6 @@
   <remove-project name="platform/packages/providers/MediaProvider" />
   <remove-project name="platform/system/bt" />
   <remove-project name="platform/system/media" />
-  <remove-project name="platform/system/netd" />
   <remove-project name="platform/hardware/ril" />
   <remove-project name="platform/hardware/qcom/keymaster" />
   <remove-project name="platform/hardware/interfaces" />
@@ -97,7 +96,6 @@
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
   <project path="system/bt" name="android_system_bt" remote="oreo-victara" revision="lineage-15.0" />
   <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
-  <project path="system/netd" name="android_system_netd" remote="oreo-victara" revision="lineage-15.0" />
   <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="oreo-onyx" revision="aosp-8.0.0" />
   <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" remote="oreo-onyx" revision="aosp-8.0.0" />
   <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="oreo-onyx" revision="aosp-8.0.0" />
