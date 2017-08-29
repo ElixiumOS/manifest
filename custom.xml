@@ -106,6 +106,7 @@
   <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
 
   <!-- Lineage additions -->
+  <project path="hardware/cyanogen" name="LineageOS/android_hardware_cyanogen" remote="github" revision="lineage-15.0" />
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="cm-14.1" />
   <project path="external/tinycompress" name="android_external_tinycompress" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/selinux" name="android_external_selinux" remote="oreo-victara" revision="lineage-15.0" />
