@@ -34,6 +34,7 @@
   <remove-project name="platform/packages/apps/QuickSearchBox" />
   <remove-project name="platform/packages/apps/DeskClock" />
   <remove-project name="platform/packages/apps/Music" />
+  <remove-project name="platform/packages/apps/Settings" />
   <remove-project name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
@@ -61,6 +62,7 @@
   <remove-project name="platform/build/kati" />
   <remove-project name="platform/build/soong" />
   <remove-project name="platform/bionic" />
+  <remove-project name="platform/frameworks/base" />
   <remove-project name="platform/frameworks/native" />
   <remove-project name="platform/frameworks/av" />
   <remove-project name="platform/packages/providers/MediaProvider" />
@@ -72,6 +74,8 @@
   <remove-project name="platform/bootable/recovery" />
   <remove-project name="platform/external/tinycompress" />
   <remove-project name="platform/external/selinux" />
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <remove-project name="platform/bootable/recovery" />
 
   <!-- Replacement -->
   <project path="bootable/recovery" name="android_bootable_recovery" remote="oreo-victara" revision="lineage-15.0" />
@@ -92,16 +96,22 @@
   </project>
   <project path="hardware/ril-caf" name="hardware_ril" remote="oreo-onyx" revision="lineage-15.0-caf" />
   <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="oreo-victara" revision="lineage-15.0" />
-  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="oreo-onyx" revision="lineage-15.0" />
+  <project path="hardware/interfaces" name="GZOSP/hardware_interfaces" remote="github" revision="8.0" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="oreo-victara" revision="lineage-15.0" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="oreo-onyx" revision="lineage-15.0" />
   <project path="system/core" name="platform_system_core" remote="oreos" />
   <project path="system/vold" name="platform_system_vold" remote="oreos" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
-  <project path="system/bt" name="system_bt" remote="oreo-onyx" revision="lineage-15.0" />
+  <project path="system/bt" name="halogenOS/android_system_bt" remote="github" revision="XOS-8.0" />
   <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
   <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" remote="caf-msm8998-8.x" />
   <project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" remote="github" revision="cm-14.1" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="oreos" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="oreos" />
+  <project path="frameworks/av" name="platform_frameworks_av" remote="oreos" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="oreos" />
+  <project path="external/wpa_supplicant_8" name="GZOSP/external_wpa_supplicant_8" remote="github" revision="8.0" />
+  <project path="platform/bootable/recovery" name="platform_bootable_recovery" remote="oreos" />
 
   <!-- additions -->
   <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
@@ -115,7 +125,7 @@
   <project path="external/stlport" name="android_external_stlport" remote="oreo-victara" revision="lineage-15.0" />
 
   <!-- CAF repos from codeaurora and lineage -->
-  <project path="device/qcom/common" name="device/qcom/common" remote="caf-msm8998-8.x" />
+  <project path="device/qcom/common" name="GZOSP/device_qcom_common" remote="github" revision="8.0" />
   <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" remote="github" revision="cm-14.1" />
   <project path="external/ant-wireless/ant_native" name="LineageOS/android_external_ant-wireless_ant_native" remote="github" revision="cm-14.1" />
   <project path="external/ant-wireless/ant_service" name="LineageOS/android_external_ant-wireless_ant_service" remote="github" revision="cm-14.1" />
