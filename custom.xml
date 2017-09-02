@@ -75,10 +75,8 @@
   <remove-project name="platform/external/tinycompress" />
   <remove-project name="platform/external/selinux" />
   <remove-project name="platform/external/wpa_supplicant_8" />
-  <remove-project name="platform/bootable/recovery" />
 
   <!-- Replacement -->
-  <project path="bootable/recovery" name="android_bootable_recovery" remote="oreo-victara" revision="lineage-15.0" />
   <project path="bionic" name="platform_bionic" remote="oreos" />
   <project path="build/make" name="platform_build_make" remote="oreos" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -111,7 +109,7 @@
   <project path="frameworks/av" name="platform_frameworks_av" remote="oreos" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="oreos" />
   <project path="external/wpa_supplicant_8" name="GZOSP/external_wpa_supplicant_8" remote="github" revision="8.0" />
-  <project path="platform/bootable/recovery" name="platform_bootable_recovery" remote="oreos" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" remote="oreos" />
 
   <!-- additions -->
   <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
