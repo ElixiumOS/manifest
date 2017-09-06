@@ -102,7 +102,7 @@
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
   <project path="system/bt" name="halogenOS/android_system_bt" remote="github" revision="XOS-8.0" />
   <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
-  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" remote="caf-msm8998-8.x" />
+  <project path="packages/providers/MediaProvider" name="GZOSP/packages_providers_MediaProvider" remote="github" revision="8.0" />
   <project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" remote="github" revision="cm-14.1" />
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="oreos" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="oreos" />
