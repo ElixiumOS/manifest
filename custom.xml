@@ -22,6 +22,9 @@
   <remote  name="oreo-victara"
            fetch="https://github.com/oreo-victara" />
 
+  <remote  name="gzosp"
+           fetch="https://github.com/GZOSP" />
+
   <!-- General useless things removing -->
   <remove-project name="platform/packages/apps/Launcher2" />
   <remove-project name="platform/packages/apps/LegacyCamera" />
@@ -75,6 +78,7 @@
   <remove-project name="platform/external/tinycompress" />
   <remove-project name="platform/external/selinux" />
   <remove-project name="platform/external/wpa_supplicant_8" />
+  <remove-project name="platform/hardware/ril" />
 
   <!-- Replacement -->
   <project path="bionic" name="platform_bionic" remote="oreos" />
@@ -92,27 +96,29 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="hardware/ril-caf" name="hardware_ril" remote="oreo-onyx" revision="lineage-15.0-caf" />
+  <project path="hardware/ril-caf" name="hardware_ril" remote="gzosp" revision="8.0-caf" />
+  <project path="hardware/ril" name="hardware_ril" remote="gzosp" revision="8.0" />
   <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="oreo-victara" revision="lineage-15.0" />
-  <project path="hardware/interfaces" name="GZOSP/hardware_interfaces" remote="github" revision="8.0" />
-  <project path="hardware/libhardware" name="android_hardware_libhardware" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="gzosp" revision="8.0" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="gzosp" revision="8.0" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="oreo-onyx" revision="lineage-15.0" />
   <project path="system/core" name="platform_system_core" remote="oreos" />
   <project path="system/vold" name="platform_system_vold" remote="oreos" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
   <project path="system/bt" name="halogenOS/android_system_bt" remote="github" revision="XOS-8.0" />
   <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
-  <project path="packages/providers/MediaProvider" name="GZOSP/packages_providers_MediaProvider" remote="github" revision="8.0" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="gzosp" revision="8.0" />
   <project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" remote="github" revision="cm-14.1" />
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="oreos" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="oreos" />
   <project path="frameworks/av" name="platform_frameworks_av" remote="oreos" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="oreos" />
-  <project path="external/wpa_supplicant_8" name="GZOSP/external_wpa_supplicant_8" remote="github" revision="8.0" />
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.0" />
   <project path="bootable/recovery" name="platform_bootable_recovery" remote="oreos" />
 
   <!-- additions -->
   <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
+  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.0" />
 
   <!-- Lineage additions -->
   <project path="hardware/cyanogen" name="LineageOS/android_hardware_cyanogen" remote="github" revision="lineage-15.0" />
@@ -123,7 +129,7 @@
   <project path="external/stlport" name="android_external_stlport" remote="oreo-victara" revision="lineage-15.0" />
 
   <!-- CAF repos from codeaurora and lineage -->
-  <project path="device/qcom/common" name="GZOSP/device_qcom_common" remote="github" revision="8.0" />
+  <project path="device/qcom/common" name="device_qcom_common" remote="gzosp" revision="8.0" />
   <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" remote="github" revision="cm-14.1" />
   <project path="external/ant-wireless/ant_native" name="LineageOS/android_external_ant-wireless_ant_native" remote="github" revision="cm-14.1" />
   <project path="external/ant-wireless/ant_service" name="LineageOS/android_external_ant-wireless_ant_service" remote="github" revision="cm-14.1" />
@@ -157,7 +163,7 @@
   <project path="hardware/qcom/wlan-caf" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan" remote="github" revision="cm-14.1-caf" />
   <project path="system/qcom" name="platform/system/qcom" remote="caf-msm8998-8.x" />
   <project path="vendor/codeaurora/telephony" name="platform/vendor/codeaurora/telephony" remote="caf-msm8998-8.x" />
-  <project path="vendor/qcom/opensource/bluetooth" name="platform/vendor/qcom-opensource/bluetooth" remote="caf-msm8998-8.x" />
+  <!--<project path="vendor/qcom/opensource/bluetooth" name="platform/vendor/qcom-opensource/bluetooth" remote="caf-msm8998-8.x" />-->
   <project path="vendor/qcom/opensource/cryptfs_hw" name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw" remote="github" revision="cm-14.1" />
   <project path="vendor/qcom/opensource/dataservices" name="platform/vendor/qcom-opensource/dataservices" remote="caf-msm8998-8.x" />
   <project path="vendor/qcom/opensource/dpm" name="platform/vendor/qcom-opensource/dpm" remote="caf-msm8998-8.x" />
