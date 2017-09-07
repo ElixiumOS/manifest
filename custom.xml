@@ -101,7 +101,7 @@
   <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="oreo-victara" revision="lineage-15.0" />
   <project path="hardware/interfaces" name="hardware_interfaces" remote="gzosp" revision="8.0" />
   <project path="hardware/libhardware" name="hardware_libhardware" remote="gzosp" revision="8.0" />
-  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="oreo-onyx" revision="lineage-15.0" />
+  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="gzosp" revision="8.0" />
   <project path="system/core" name="platform_system_core" remote="oreos" />
   <project path="system/vold" name="platform_system_vold" remote="oreos" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="oreos" />
@@ -115,6 +115,8 @@
   <project path="frameworks/native" name="platform_frameworks_native" remote="oreos" />
   <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.0" />
   <project path="bootable/recovery" name="platform_bootable_recovery" remote="oreos" />
+  <project path="system/qcom" name="system_qcom" remote="gzosp" revision="8.0" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="oreos" />
 
   <!-- additions -->
   <project path="vendor/custom" name="platform_vendor_custom" remote="oreos" />
@@ -161,10 +163,8 @@
   <project path="hardware/qcom/media-caf/msm8996" name="LineageOS/android_hardware_qcom_media" groups="qcom" remote="github" revision="lineage-15.0-caf-8996" />
   <project path="hardware/qcom/media-caf/msm8998" name="LineageOS/android_hardware_qcom_media" groups="qcom" remote="github" revision="lineage-15.0-caf-8998" />
   <project path="hardware/qcom/wlan-caf" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan" remote="github" revision="cm-14.1-caf" />
-  <project path="system/qcom" name="platform/system/qcom" remote="caf-msm8998-8.x" />
   <project path="vendor/codeaurora/telephony" name="platform/vendor/codeaurora/telephony" remote="caf-msm8998-8.x" />
   <!--<project path="vendor/qcom/opensource/bluetooth" name="platform/vendor/qcom-opensource/bluetooth" remote="caf-msm8998-8.x" />-->
-  <project path="vendor/qcom/opensource/cryptfs_hw" name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw" remote="github" revision="cm-14.1" />
   <project path="vendor/qcom/opensource/dataservices" name="platform/vendor/qcom-opensource/dataservices" remote="caf-msm8998-8.x" />
   <project path="vendor/qcom/opensource/dpm" name="platform/vendor/qcom-opensource/dpm" remote="caf-msm8998-8.x" />
   <project path="vendor/qcom/opensource/time-services" name="platform/vendor/qcom-opensource/time-services" remote="caf-msm8998-8.x" />
