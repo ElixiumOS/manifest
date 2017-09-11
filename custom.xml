@@ -54,6 +54,7 @@
   <remove-project name="platform/system/bt" />
   <remove-project name="platform/system/media" />
   <remove-project name="platform/system/nfc" />
+  <remove-project name="platform/external/avb" />
   <remove-project name="platform/external/libnfnetlink" />
   <remove-project name="platform/external/libnetfilter_conntrack" />
   <remove-project name="platform/external/tinycompress" />
@@ -124,6 +125,7 @@
   <project path="vendor/elixium" name="vendor_elixium" remote="elix" />
   <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.0" />
   <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.0" />
+  <project path="external/avb" name="platform/external/avb" remote="caf-msm8998" />
 
 
 
