@@ -137,7 +137,7 @@
   <project path="external/ant-wireless/antradio-library" name="LineageOS/android_external_ant-wireless_antradio-library" remote="github" revision="cm-14.1" />
   <project path="external/brctl" name="LineageOS/android_external_brctl" remote="github" revision="cm-14.1" />
   <project path="external/connectivity" name="LineageOS/android_external_connectivity" remote="github" revision="cm-14.1" />
-  <project path="external/ebtables" name="LineageOS/android_external_ebtables" remote="github" revision="cm-14.1" />
+  <project path="external/ebtables" name="LineageOS/android_external_ebtables" remote="github" revision="lineage-15.0" />
   <project path="external/gson" name="LineageOS/android_external_gson" remote="github" revision="cm-14.1" />
   <project path="external/json-c" name="LineageOS/android_external_json-c" remote="github" revision="cm-14.1" />
   <project path="external/libnetfilter_conntrack" name="LineageOS/android_external_libnetfilter_conntrack" remote="github" revision="cm-14.1" />
