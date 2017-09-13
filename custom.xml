@@ -82,6 +82,9 @@
   <remove-project name="platform/hardware/libhardware" />
   <remove-project name="platform/hardware/ril" />
   <remove-project name="platform/bootable/recovery" />
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <remove-project name="platform/packages/providers/TelephonyProvider" />
+  <remove-project name="platform/packages/services/Telephony" />
 
 
   <!-- Replacements and additions -->
@@ -126,6 +129,9 @@
   <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.0" />
   <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.0" />
   <project path="external/avb" name="platform/external/avb" remote="caf-msm8998" />
+  <project paht="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="gzosp" revision="8.0" />
+  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="gzosp" revision="8.0" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="gzosp" revision="8.0" />
 
 
 
