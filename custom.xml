@@ -150,11 +150,11 @@
   <project path="external/libnfnetlink" name="LineageOS/android_external_libnfnetlink" remote="github" revision="cm-14.1" />
   <project path="external/powertop" name="LineageOS/android_external_powertop" remote="github" revision="cm-14.1" />
   <project path="external/protobuf-c" name="LineageOS/android_external_protobuf-c" remote="github" revision="cm-14.1" />
-  <project path="external/tinycompress" name="android_external_tinycompress" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/selinux" name="android_external_selinux" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/stlport" name="android_external_stlport" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/libncurses" name="LineageOS/android_external_libncurses" remote="github" revision="cm-14.1" />
+  <project path="external/tinycompress" name="LineageOS/android_external_tinycompress" remote="github" revision="lineage-15.0" />
   <project path="hardware/qcom/audio-caf/msm8960" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="lineage-15.0-caf-8960" />
   <project path="hardware/qcom/audio-caf/msm8974" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="lineage-15.0-caf-8974" />
   <project path="hardware/qcom/audio-caf/msm8994" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="lineage-15.0-caf-8994" />
