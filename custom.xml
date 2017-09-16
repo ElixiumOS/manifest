@@ -48,6 +48,7 @@
   <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
   <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
   <remove-project name="platform/hardware/libhardware_legacy" />
+  <remove-project name="platform/system/tools/hidl" />
   <remove-project name="platform/system/sepolicy" />
   <remove-project name="platform/system/core" />
   <remove-project name="platform/system/vold" />
@@ -111,30 +112,30 @@
   <project path="hardware/interfaces" name="hardware_interfaces" remote="gzosp" revision="8.0" />
   <project path="hardware/libhardware" name="hardware_libhardware" remote="gzosp" revision="8.0" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="gzosp" revision="8.0" />
+  <project path="system/bt" name="system_bt" remote="gzosp" revision="8.0" />
   <project path="system/core" name="platform_system_core" remote="elix" />
-  <project path="system/vold" name="platform_system_vold" remote="elix" />
+  <project path="system/media" name="system_media" remote="gzosp" revision="8.0" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="elix" />
-  <project path="system/bt" name="halogenOS/android_system_bt" remote="github" revision="XOS-8.0" />
-  <project path="system/media" name="android_system_media" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="system/vold" name="system_vold" remote="gzosp" revision="8.0" />
   <project path="system/qcom" name="system_qcom" remote="gzosp" revision="8.0" />
   <project path="system/nfc" name="system_nfc" groups="pdk" remote="gzosp" revision="8.0" />
+  <project path="system/tools/hidl" name="system_tools_hidl" remote="gzosp" revision="8.0" />
   <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="gzosp" revision="8.0" />
   <project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" remote="github" revision="cm-14.1" />
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="elix" />
   <project path="packages/apps/Nfc" name="packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="gzosp" revision="8.0" />
+  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="gzosp" revision="8.0" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="gzosp" revision="8.0" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="elix" />
   <project path="frameworks/av" name="platform_frameworks_av" remote="elix" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="elix" />
+  <project paht="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="gzosp" revision="8.0" />
   <project path="bootable/recovery" name="platform_bootable_recovery" remote="elix" />
   <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="elix" />
   <project path="vendor/elixium" name="vendor_elixium" remote="elix" />
   <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.0" />
   <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.0" />
   <project path="external/avb" name="platform/external/avb" remote="caf-msm8998" />
-  <project paht="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="gzosp" revision="8.0" />
-  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="gzosp" revision="8.0" />
-  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="gzosp" revision="8.0" />
-
 
   <!-- CAF repos and additions from codeaurora and lineage -->
   <project path="device/qcom/common" name="device_qcom_common" remote="gzosp" revision="8.0" />
@@ -151,7 +152,7 @@
   <project path="external/libnfnetlink" name="LineageOS/android_external_libnfnetlink" remote="github" revision="cm-14.1" />
   <project path="external/powertop" name="LineageOS/android_external_powertop" remote="github" revision="cm-14.1" />
   <project path="external/protobuf-c" name="LineageOS/android_external_protobuf-c" remote="github" revision="cm-14.1" />
-  <project path="external/selinux" name="android_external_selinux" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="external/selinux" name="external_selinux" remote="gzosp" revision="8.0" />
   <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/stlport" name="android_external_stlport" remote="oreo-victara" revision="lineage-15.0" />
   <project path="external/libncurses" name="LineageOS/android_external_libncurses" remote="github" revision="cm-14.1" />
@@ -201,7 +202,7 @@
   <project path="hardware/qcom/fm" name="LineageOS/android_hardware_qcom_fm" groups="qcom,qcom_fm" remote="github" revision="cm-14.1" />
   <project path="hardware/ril-caf" name="platform_hardware_ril" remote="elix" revision="elix-8.0-caf" />
   <project path="hardware/ril" name="hardware_ril" remote="gzosp" revision="8.0" />
-  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" remote="oreo-victara" revision="lineage-15.0" />
+  <project path="hardware/qcom/keymaster" name="hardware_qcom_keymaster" remote="gzosp" revision="8.0" />
 
 
   <!-- OnePlus 3/3t releated repos -->
