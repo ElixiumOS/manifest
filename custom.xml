@@ -92,6 +92,8 @@
   <remove-project name="platform/packages/providers/TelephonyProvider" />
   <remove-project name="platform/packages/services/Telephony" />
   <remove-project name="platform/packages/inputmethods/LatinIME" />
+  <remove-project name="platform/packages/apps/Contacts" />
+  <remove-project name="platform/packages/apps/Dialer" />
 
   <!-- Replacements and additions -->
   <project path="bionic" name="platform_bionic" remote="elix" />
@@ -128,6 +130,8 @@
   <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="gzosp" revision="8.0" />
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="gzosp" revision="8.0" />
   <project path="packages/inputmethods/LatinIME" name="packages_inputmethods_LatinIME" remote="gzosp" revision="8.0" />
+  <project path="packages/apps/Dialer" name="ezio84/abc_packages_apps_Dialer" remote="github" revision="o" />
+  <project path="packages/apps/Contacts" name="ezio84/abc_packages_apps_Contacts" remote="github" revision="o" />
   <project path="frameworks/base" name="platform_frameworks_base" remote="elix" />
   <project path="frameworks/av" name="platform_frameworks_av" remote="elix" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="elix" />
@@ -206,7 +210,6 @@
   <project path="hardware/ril" name="hardware_ril" remote="gzosp" revision="8.0" />
   <project path="hardware/qcom/keymaster" name="hardware_qcom_keymaster" remote="gzosp" revision="8.0" />
 
-
   <!-- OnePlus 3/3t releated repos -->
   <project path="device/oppo/common" name="android_device_oppo_common" remote="elix" />
   <project path="device/oneplus/oneplus3" name="android_device_oneplus_oneplus3" remote="elix" />
@@ -219,6 +222,6 @@
   <!-- Nexus 9 wifi releated repos -->
   <project paht="device/htc/flounder" name="android_device_htc_flounder" remote="elix" />
   <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" remote="github" revision="lineage-15.0" />
-  <project path="kernel/htc/flounder" name="Tunder-Kernel/android_kernel_htc_flounder" remote="github" revision="Tunder-1.0" />
+  <project path="kernel/htc/flounder" name="Tunder-Kernel/android_kernel_htc_flounder" remote="github" revision="Tunder-1.1" />
 
 </manifest>
