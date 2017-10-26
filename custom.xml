@@ -135,7 +135,7 @@
   <project path="frameworks/av" name="platform_frameworks_av" remote="elix" />
   <project path="frameworks/native" name="platform_frameworks_native" remote="elix" />
   <project paht="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="gzosp" revision="8.0" />
-  <project path="bootable/recovery" name="platform_bootable_recovery" remote="elix" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="gzosp" revision="8.0" />
   <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="elix" />
   <project path="vendor/elixium" name="vendor_elixium" remote="elix" />
   <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.0" />
