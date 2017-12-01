@@ -222,4 +222,10 @@
   <project path="vendor/htc" name="TheMuppets/proprietary_vendor_htc" remote="github" revision="lineage-15.0" />
   <project path="kernel/htc/flounder" name="Tunder-Kernel/android_kernel_htc_flounder" remote="github" revision="Tunder-1.1" />
 
+  <!-- dumpling releated repos -->
+  <project path="device/oneplus/dumpling" name="android_device_oneplus_dumpling" remote="elix" />
+  <project path="vendor/oneplus/dumpling" name="vendor_oneplus_dumpling" remote="elix" />
+  <project path="kernel/oneplus/msm8998" name="Tunder-Kernel/android_kernel_oneplus_msm8998" remote="github" revision="Tunder-1.0" />
+  <project path="device/oppo/common" name="android_device_oppo_common" remote="elix" />
+
 </manifest>
