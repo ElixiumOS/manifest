@@ -110,6 +110,9 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="hardware/interfaces" name="hardware_interfaces" remote="gzosp" revision="8.1" />
+  <project path="hardware/gzosp/interfaces" name="hardware_gzosp_interfaces" remote="gzosp" revision="8.1" >
+      <copyfile dest="hardware/gzosp/Android.bp" src="Android.bp"/>
+  </project>
   <project path="hardware/libhardware" name="nitrogen-project/android_hardware_libhardware" remote="github" revision="o2" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="gzosp" revision="8.1" />
   <project path="system/bt" name="system_bt" remote="gzosp" revision="8.1" />
