@@ -22,6 +22,10 @@
   <remote  name="du"
            fetch="https://github.com/DirtyUnicorns" />
 
+  <remote  name="nitrogen"
+           fetch="https://github.com/nitrogen-project"
+           revision="o2" />
+
   <!-- General useless things removing -->
   <remove-project name="platform/packages/apps/Launcher2" />
   <remove-project name="platform/packages/apps/LegacyCamera" />
@@ -119,7 +123,7 @@
   <project path="system/core" name="platform_system_core" remote="elix" />
   <project path="system/media" name="system_media" remote="gzosp" revision="8.1" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="elix" />
-  <project path="system/vold" name="system_vold" remote="gzosp" revision="8.1" />
+  <project path="system/vold" name="android_system_vold" remote="nitrogen" />
   <project path="system/qcom" name="system_qcom" remote="gzosp" revision="8.1" />
   <project path="system/nfc" name="system_nfc" groups="pdk" remote="gzosp" revision="8.1" />
   <project path="system/tools/hidl" name="platform_system_tools_hidl" remote="elix" />
@@ -224,7 +228,7 @@
   <!-- dumpling releated repos -->
   <project path="device/oneplus/dumpling" name="android_device_oneplus_dumpling" remote="elix" />
   <project path="vendor/oneplus/dumpling" name="vendor_oneplus_dumpling" remote="elix" />
-  <project path="kernel/oneplus/msm8998" name="Tunder-Kernel/android_kernel_oneplus_msm8998" remote="github" revision="Tunder-1.0" />
+  <project path="kernel/oneplus/msm8998" name="LineageOS/android_kernel_oneplus_msm8998" remote="github" revision="lineage-15.1" />
   <project path="device/oppo/common" name="android_device_oppo_common" remote="elix" />
 
 </manifest>
