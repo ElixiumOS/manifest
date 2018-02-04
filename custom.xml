@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com" />
+
+  <remote  name="caf-msm8998"
+           fetch="https://source.codeaurora.org/quic/la"
+           revision="refs/tags/LA.UM.6.4.r1-05400-8x98.0" />
+
+  <remote  name="elix"
+           fetch="https://github.com/ElixiumOS"
+           revision="elix-8.1" />
+
+  <remote  name="gzosp"
+           fetch="https://github.com/GZOSP" />
+
+  <remote  name="du"
+           fetch="https://github.com/DirtyUnicorns" />
+
+  <!-- General Useless aosp stuff removing -->
+  <remove-project name="platform/packages/apps/Launcher2" />
+  <remove-project name="platform/packages/apps/LegacyCamera" />
+  <remove-project name="platform/packages/apps/Gallery" />
+  <remove-project name="platform/packages/apps/Gallery2" />
+  <remove-project name="platform/packages/apps/ExactCalculator" />
+  <remove-project name="platform/packages/apps/Camera2" />
+  <remove-project name="platform/packages/apps/Calendar" />
+  <remove-project name="platform/packages/apps/Browser2" />
+  <remove-project name="platform/packages/apps/QuickSearchBox" />
+  <remove-project name="platform/packages/apps/DeskClock" />
+  <remove-project name="platform/packages/apps/Music" />
+  <remove-project name="platform/packages/apps/Settings" />
+  <remove-project name="platform/packages/apps/Nfc" />
+  <remove-project name="platform/packages/providers/MediaProvider" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+  <remove-project name="platform/hardware/libhardware_legacy" />
+  <remove-project name="platform/system/tools/hidl" />
+  <remove-project name="platform/system/sepolicy" />
+  <remove-project name="platform/system/core" />
+  <remove-project name="platform/system/vold" />
+  <remove-project name="platform/system/bt" />
+  <remove-project name="platform/system/media" />
+  <remove-project name="platform/system/nfc" />
+  <remove-project name="platform/system/libhidl" />
+  <remove-project name="platform/system/extras" />
+  <remove-project name="platform/external/avb" />
+  <remove-project name="platform/external/libnfnetlink" />
+  <remove-project name="platform/external/libnetfilter_conntrack" />
+  <remove-project name="platform/external/tinycompress" />
+  <remove-project name="platform/external/selinux" />
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <remove-project name="device/google/dragon" />
+  <remove-project name="device/google/dragon-kernel" />
+  <remove-project name="device/google/marlin" />
+  <remove-project name="device/google/marlin-kernel" />
+  <remove-project name="device/huawei/angler" />
+  <remove-project name="device/huawei/angler-kernel" />
+  <remove-project name="device/lge/bullhead" />
+  <remove-project name="device/lge/bullhead-kernel" />
+  <remove-project name="device/asus/fugu" />
+  <remove-project name="device/asus/fugu-kernel"/>
+  <remove-project name="platform/build" />
+  <remove-project name="platform/build/kati" />
+  <remove-project name="platform/build/soong" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/frameworks/base" />
+  <remove-project name="platform/frameworks/native" />
+  <remove-project name="platform/frameworks/av" />
+  <remove-project name="platform/hardware/qcom/audio" />
+  <remove-project name="platform/hardware/qcom/bt" />
+  <remove-project name="platform/hardware/qcom/display" />
+  <remove-project name="platform/hardware/qcom/keymaster" />
+  <remove-project name="platform/hardware/qcom/media" />
+  <remove-project name="platform/hardware/qcom/wlan" />
+  <remove-project name="platform/hardware/interfaces" />
+  <remove-project name="platform/hardware/libhardware" />
+  <remove-project name="platform/hardware/ril" />
+  <remove-project name="platform/bootable/recovery" />
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <remove-project name="platform/packages/providers/TelephonyProvider" />
+  <remove-project name="platform/packages/services/Telephony" />
+  <remove-project name="platform/packages/inputmethods/LatinIME" />
+  <remove-project name="platform/packages/apps/Contacts" />
+  <remove-project name="platform/packages/apps/Dialer" />
+  <remove-project name="platform/packages/apps/PackageInstaller" />
+
+<!-- Additions and replacements -->
+
+  <!-- Builder -->
+  <project path="build/make" name="platform_build_make" remote="elix" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/kati" name="build_kati" remote="gzosp" revision="8.1" />
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="elix" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="vendor/soong" name="vendor_soong" remote="elix" />
+
+  <!-- Packages -->
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="gzosp" revision="8.1" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="gzosp" revision="8.1" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="elix" revision="elix-8.1-rebase" />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="gzosp" revision="8.1" />
+<!--  <project path="packages/apps/DNA" name="packages_apps_DNA" remote="elix" /> -->
+  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="gzosp" revision="8.1" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="gzosp" revision="8.1" />
+  <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" remote="du" revision="o8x" />
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="du" revision="o8x" />
+  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" remote="du" revision="o8x" />
+  <project path="packages/apps/PackageInstaller" name="nitrogen-project/android_packages_apps_PackageInstaller" remote="github" revision="o2" />
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="staging/lineage-15.1" />
+
+  <!-- Systems -->
+  <project path="system/bt" name="system_bt" remote="gzosp" revision="8.1" />
+  <project path="system/core" name="platform_system_core" remote="elix" />
+  <project path="system/media" name="system_media" remote="gzosp" revision="8.1" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" remote="elix" />
+  <project path="system/vold" name="android_system_vold" remote="nitrogen" />
+  <project path="system/qcom" name="system_qcom" remote="gzosp" revision="8.1" />
+  <project path="system/nfc" name="system_nfc" groups="pdk" remote="gzosp" revision="8.1" />
+  <project path="system/tools/hidl" name="platform_system_tools_hidl" remote="elix" />
+  <project path="system/libhidl" name="system_libhidl" remote="gzosp" revision="8.1" />
+  <project path="system/extras" name="platform_system_extras" remote="elix" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="platform_frameworks_base" remote="elix" revision="elix-8.1-rebase" />
+  <project path="frameworks/av" name="platform_frameworks_av" remote="elix" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="elix" />
+  <project paht="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="gzosp" revision="8.1" />
+
+  <!-- Custom Hardware -->
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="gzosp" revision="8.1" />
+  <project path="hardware/gzosp/interfaces" name="hardware_gzosp_interfaces" remote="gzosp" revision="8.1" >
+      <copyfile dest="hardware/gzosp/Android.bp" src="Android.bp"/>
+  </project>
+  <project path="hardware/libhardware" name="nitrogen-project/android_hardware_libhardware" remote="github" revision="o2" />
+  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="gzosp" revision="8.1" />
+  <project path="hardware/cyanogen" name="LineageOS/android_hardware_cyanogen" remote="github" revision="lineage-15.0" />
+
+  <!-- QCOM HW -->
+  <project path="hardware/qcom/audio/default" name="hardware_qcom_audio" groups="qcom,qcom_audio" remote="gzosp" revision="8.1" />
+  <project path="hardware/qcom/audio-caf/apq8084" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8084" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8916" />
+  <project path="hardware/qcom/audio-caf/msm8952" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8952" />
+  <project path="hardware/qcom/audio-caf/msm8960" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8960" />
+  <project path="hardware/qcom/audio-caf/msm8974" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8974" />
+  <project path="hardware/qcom/audio-caf/msm8994" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8994" />
+  <project path="hardware/qcom/audio-caf/msm8996" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8996" />
+  <project path="hardware/qcom/audio-caf/msm8998" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="staging/lineage-15.1-caf-8998" />
+  <project path="hardware/qcom/display-caf/apq8084" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8084" />
+  <project path="hardware/qcom/display-caf/msm8916" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8916" />
+  <project path="hardware/qcom/display-caf/msm8952" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8952" />
+  <project path="hardware/qcom/display-caf/msm8960" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8960" />
+  <project path="hardware/qcom/display-caf/msm8974" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8974" />
+  <project path="hardware/qcom/display-caf/msm8994" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8994" />
+  <project path="hardware/qcom/display-caf/msm8996" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8996" />
+  <project path="hardware/qcom/display-caf/msm8998" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="staging/lineage-15.1-caf-8998" />
+  <project path="hardware/qcom/fm" name="LineageOS/android_hardware_qcom_fm" remote="github" groups="qcom,qcom_fm" revision="staging/lineage-15.1" />
+  <project path="hardware/qcom/media-caf/apq8084" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8084" />
+  <project path="hardware/qcom/media-caf/msm8916" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8916" />
+  <project path="hardware/qcom/media-caf/msm8952" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8952" />
+  <project path="hardware/qcom/media-caf/msm8960" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8960" />
+  <project path="hardware/qcom/media-caf/msm8974" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8974" />
+  <project path="hardware/qcom/media-caf/msm8994" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8994" />
+  <project path="hardware/qcom/media-caf/msm8996" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8996" />
+  <project path="hardware/qcom/media-caf/msm8998" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="staging/lineage-15.1-caf-8998" />
+  <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" remote="gzosp" revision="8.1" />
+  <project path="hardware/qcom/wlan-caf" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan,pdk" revision="staging/lineage-15.1-caf" />
+  <project path="hardware/qcom/bt-caf" name="LineageOS/android_hardware_qcom_bt" groups="qcom" remote="github" revision="staging/lineage-15.1-caf" />
+  <project path="hardware/qcom/bt" name="LineageOS/android_hardware_qcom_bt" groups="qcom" remote="github" revision="staging/lineage-15.1" />
+  <project path="hardware/ril-caf" name="platform_hardware_ril" remote="elix" revision="elix-8.1-caf" />
+  <project path="hardware/ril" name="hardware_ril" remote="gzosp" revision="8.1" />
+  <project path="hardware/qcom/keymaster" name="hardware_qcom_keymaster" remote="gzosp" revision="8.1" />
+
+  <!-- Externals -->
+  <project path="external/ant-wireless/ant_native" name="platform/external/ant-wireless/ant_native" remote="caf-msm8998" />
+  <project path="external/ant-wireless/ant_service" name="platform/external/ant-wireless/ant_service" remote="caf-msm8998" />
+  <project path="external/ant-wireless/antradio-library" name="LineageOS/android_external_ant-wireless_antradio-library" remote="github" revision="cm-14.1" />
+  <project path="external/brctl" name="LineageOS/android_external_brctl" remote="github" revision="cm-14.1" />
+  <project path="external/connectivity" name="LineageOS/android_external_connectivity" remote="github" revision="cm-14.1" />
+  <project path="external/ebtables" name="LineageOS/android_external_ebtables" remote="github" revision="lineage-15.0" />
+  <project path="external/gson" name="LineageOS/android_external_gson" remote="github" revision="cm-14.1" />
+  <project path="external/json-c" name="LineageOS/android_external_json-c" remote="github" revision="cm-14.1" />
+  <project path="external/libnetfilter_conntrack" name="LineageOS/android_external_libnetfilter_conntrack" remote="github" revision="cm-14.1" />
+  <project path="external/libnfnetlink" name="LineageOS/android_external_libnfnetlink" remote="github" revision="cm-14.1" />
+  <project path="external/powertop" name="LineageOS/android_external_powertop" remote="github" revision="cm-14.1" />
+  <project path="external/protobuf-c" name="LineageOS/android_external_protobuf-c" remote="github" revision="cm-14.1" />
+  <project path="external/selinux" name="external_selinux" remote="gzosp" revision="8.1" />
+  <project path="external/libnfc-nxp" name="LineageOS/android_external_libnfc-nxp" remote="github" revision="lineage-15.0" />
+  <project path="external/stlport" name="LineageOS/android_external_stlport" remote="github" revision="lineage-15.0" />
+  <project path="external/libncurses" name="LineageOS/android_external_libncurses" remote="github" revision="cm-14.1" />
+  <project path="external/tinycompress" name="LineageOS/android_external_tinycompress" remote="github" revision="lineage-15.0" />
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="gzosp" revision="8.1" />
+  <project path="external/avb" name="platform/external/avb" remote="caf-msm8998" />
+
+  <!-- Vendors -->
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="elix" />
+  <project path="vendor/elixium" name="vendor_elixium" remote="elix" />
+  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="gzosp" revision="8.1" />
+  <project path="vendor/codeaurora/telephony" name="platform/vendor/codeaurora/telephony" remote="caf-msm8998" />
+  <project path="vendor/qcom/opensource/dataservices" name="platform/vendor/qcom-opensource/dataservices" remote="caf-msm8998" />
+  <project path="vendor/qcom/opensource/dpm" name="platform/vendor/qcom-opensource/dpm" remote="caf-msm8998" />
+  <project path="vendor/qcom/opensource/time-services" name="platform/vendor/qcom-opensource/time-services" remote="caf-msm8998" />
+  <project path="vendor/nxp-nfc/opensource/frameworks" name="platform/vendor/nxp/opensource/frameworks" remote="caf-msm8998" />
+  <project path="vendor/nxp-nfc/opensource/libnfc-nci" name="LineageOS/android_vendor_nxp-nfc_opensource_libnfc-nci" remote="github" revision="cm-14.1" />
+  <project path="vendor/nxp-nfc/opensource/Nfc" name="LineageOS/android_vendor_nxp-nfc_opensource_Nfc" remote="github" revision="cm-14.1" />
+
+  <!-- Misc Repos -->
+  <project path="bionic" name="platform_bionic" remote="elix" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="gzosp" revision="8.1" />
+
+  <!-- Devices -->
+  <project path="device/qcom/common" name="device_qcom_common" remote="gzosp" revision="8.1" />
+  <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" remote="github" revision="cm-14.1" />
+
+  <!-- Griffin releated repos -->
+  <project path="device/motorola/griffin" name="android_device_motorola_griffin" remote="elix" />
+  <project path="vendor/motorola/griffin" name="MotoZ-2016/android_vendor_motorola_griffin" remote="github" revision="staging/lineage-15.1" />
+  <project path="kernel/motorola/msm8996" name="MotoZ-2016/android_kernel_motorola_msm8996" remote="github" revision="staging/lineage-15.1" />
+
+  <!-- dumpling releated repos -->
+  <project path="device/oneplus/dumpling" name="android_device_oneplus_dumpling" remote="elix" />
+  <project path="vendor/oneplus" name="TheMuppets/proprietary_vendor_oneplus" remote="github" revision="lineage-15.1" />
+  <project path="kernel/oneplus/msm8998" name="LineageOS/android_kernel_oneplus_msm8998" remote="github" revision="lineage-15.1" />
+  <project path="device/oppo/common" name="android_device_oppo_common" remote="elix" />
+
+</manifest>
