@@ -128,7 +128,7 @@
   <project path="system/core" name="platform_system_core" remote="elix" />
   <project path="system/media" name="system_media" remote="gzosp" revision="8.1" />
   <project path="system/sepolicy" name="platform_system_sepolicy" remote="elix" />
-  <project path="system/vold" name="android_system_vold" remote="nitrogen" />
+  <project path="system/vold" name="system_vold" remote="gzosp" revision="8.1" />
   <project path="system/qcom" name="system_qcom" remote="gzosp" revision="8.1" />
   <project path="system/nfc" name="system_nfc" groups="pdk" remote="gzosp" revision="8.1" />
   <project path="system/tools/hidl" name="platform_system_tools_hidl" remote="elix" />
@@ -146,7 +146,7 @@
   <project path="hardware/gzosp/interfaces" name="hardware_gzosp_interfaces" remote="gzosp" revision="8.1" >
       <copyfile dest="hardware/gzosp/Android.bp" src="Android.bp"/>
   </project>
-  <project path="hardware/libhardware" name="nitrogen-project/android_hardware_libhardware" remote="github" revision="o2" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="gzosp" revision="8.1" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="gzosp" revision="8.1" />
   <project path="hardware/cyanogen" name="LineageOS/android_hardware_cyanogen" remote="github" revision="lineage-15.0" />
 
