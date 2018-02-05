@@ -6,7 +6,7 @@
 
   <remote  name="caf-msm8998"
            fetch="https://source.codeaurora.org/quic/la"
-           revision="refs/tags/LA.UM.6.4.r1-05400-8x98.0" />
+           revision="refs/tags/LA.UM.6.4.r1-06100-8x98.0" />
 
   <remote  name="elix"
            fetch="https://github.com/ElixiumOS"
