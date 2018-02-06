@@ -93,7 +93,7 @@
 <!-- Additions and replacements -->
 
   <!-- Builder -->
-  <project path="build/make" name="platform_build_make" remote="elix" >
+  <project path="build/make" name="platform_build_make" remote="elix" revision="elix-8.1-rebase" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
