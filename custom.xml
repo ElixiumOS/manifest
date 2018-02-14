@@ -224,7 +224,7 @@
 
   <!-- Misc Repos -->
   <project path="bionic" name="platform_bionic" remote="elix" />
-  <project path="bootable/recovery" name="bootable_recovery" remote="gzosp" revision="8.1" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="du" revision="o8x" />
 
   <!-- Devices -->
   <project path="device/qcom/common" name="device_qcom_common" remote="gzosp" revision="8.1" />
